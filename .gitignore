@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+.vs
+/ip-enumenator/bin/
+/ip-enumenator/obj/

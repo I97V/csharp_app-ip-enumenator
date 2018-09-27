@@ -1,0 +1,33 @@
+﻿<Window x:Class="app_ip_enumenator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:app_ip_enumenator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="739.5" Width="1316">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="272" Margin="10,57,0,0" Stroke="Black" VerticalAlignment="Top" Width="326"/>
+        <Label Content="Settings:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.421,0" Width="363" Height="42" FontFamily="Times New Roman" FontSize="24"/>
+        <Label Content="Log file:" HorizontalAlignment="Left" Margin="21,77,0,0" VerticalAlignment="Top" Width="92"/>
+        <Label Content="Record output" HorizontalAlignment="Left" Margin="21,139,0,0" VerticalAlignment="Top" Width="92"/>
+        <Label Content="Inverse sorting" HorizontalAlignment="Left" Margin="21,170,0,0" VerticalAlignment="Top" Width="92"/>
+        <Label Content="Bounder:" HorizontalAlignment="Left" Margin="21,108,0,0" VerticalAlignment="Top" Width="92"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="66" Margin="21,201,0,0" Stroke="Black" VerticalAlignment="Top" Width="226"/>
+        <Label Content="Use mask" HorizontalAlignment="Left" Margin="21,201,0,0" VerticalAlignment="Top" Width="92"/>
+        <Label Content="Mask is:" HorizontalAlignment="Left" Margin="21,232,0,0" VerticalAlignment="Top" Width="92"/>
+        <Button HorizontalAlignment="Left" Margin="243,77,0,0" VerticalAlignment="Top" Width="80" Height="26" Content="Browse" Click="Browse_Click"/>
+        <TextBox x:Name="tb_bounder" HorizontalAlignment="Left" Height="26" Margin="118,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tb_file_name" HorizontalAlignment="Left" Height="26" Margin="118,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tb_mask" HorizontalAlignment="Left" Height="26" Margin="118,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <CheckBox x:Name="cb_record" Content="" HorizontalAlignment="Left" Margin="118,145,0,0" VerticalAlignment="Top"/>
+        <CheckBox Content="" HorizontalAlignment="Left" Margin="118,176,0,0" VerticalAlignment="Top"/>
+        <Button Content="GO!" HorizontalAlignment="Left" Margin="21,272,0,0" VerticalAlignment="Top" Width="302" Height="46" Click="Btn_Begin_Click"/>
+        <CheckBox x:Name="cb_mask" HorizontalAlignment="Left" Margin="118,207,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.45,0.067" Click="Mask_Checked"/>
+
+    </Grid>
+</Window>
