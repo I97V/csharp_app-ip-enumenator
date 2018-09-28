@@ -6,5 +6,8 @@
         public string Filepath;
         public int Bounder;
         public bool IsRecord;
+        public bool IsInverse;
+        public bool IsMask;
+        public string Mask;
     }
 }
