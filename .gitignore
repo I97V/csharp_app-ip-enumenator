@@ -32,5 +32,5 @@
 *.app
 
 .vs
-/ip-enumenator/bin/
-/ip-enumenator/obj/
+/app-ip-enumenator/bin/
+/app-ip-enumenator/obj/
