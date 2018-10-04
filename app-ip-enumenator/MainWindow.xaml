@@ -5,25 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:app_ip_enumenator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="739.5" Width="1316">
-    <Grid>
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="239" Margin="10,57,0,0" Stroke="Black" VerticalAlignment="Top" Width="326"/>
+        Title="IP Enumenator" Height="739.5" Width="1184" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Margin="0,0,2,0" RenderTransformOrigin="0.511,0.499">
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="211" Margin="10,57,0,0" Stroke="Black" VerticalAlignment="Top" Width="326"/>
         <Label Content="Settings:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.421,0" Width="363" Height="42" FontFamily="Times New Roman" FontSize="24"/>
-        <Label Content="Log file:" HorizontalAlignment="Left" Margin="21,77,0,0" VerticalAlignment="Top" Width="92"/>
-        <Label Content="Record output" HorizontalAlignment="Left" Margin="21,108,0,0" VerticalAlignment="Top" Width="92"/>
-        <Label Content="Inverse sorting" HorizontalAlignment="Left" Margin="21,139,0,0" VerticalAlignment="Top" Width="92"/>
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="66" Margin="21,170,0,0" Stroke="Black" VerticalAlignment="Top" Width="226"/>
-        <Label Content="Use mask" HorizontalAlignment="Left" Margin="21,170,0,0" VerticalAlignment="Top" Width="92"/>
-        <Label Content="Mask is:" HorizontalAlignment="Left" Margin="21,201,0,0" VerticalAlignment="Top" Width="92"/>
-        <Button HorizontalAlignment="Left" Margin="243,77,0,0" VerticalAlignment="Top" Width="80" Height="26" Content="Browse" Click="Browse_Click"/>
-        <TextBox x:Name="tb_file_name" HorizontalAlignment="Left" Height="26" Margin="118,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="tb_mask" HorizontalAlignment="Left" Height="26" Margin="118,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <CheckBox x:Name="cb_record" Content="" HorizontalAlignment="Left" Margin="118,114,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.65,0.933"/>
-        <CheckBox x:Name="cb_inverse" Content="" HorizontalAlignment="Left" Margin="118,145,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.45,-2.467"/>
-        <Button Content="GO!" HorizontalAlignment="Left" Margin="21,241,0,0" VerticalAlignment="Top" Width="302" Height="46" Click="Btn_Begin_Click"/>
-        <CheckBox x:Name="cb_mask" HorizontalAlignment="Left" Margin="118,176,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.45,0.067" Click="Mask_Checked"/>
-        <TextBox x:Name="tb_test" HorizontalAlignment="Left" Height="235" Margin="968,94,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="224"/>
-        <DataGrid x:Name="dg_table" HorizontalAlignment="Left" Height="617" Margin="378,57,0,0" VerticalAlignment="Top" Width="457" AutoGenerateColumns="False">
+        <Label Content="Log file:" HorizontalAlignment="Left" Margin="21,66,0,0" VerticalAlignment="Top" Width="92" FontFamily="Times New Roman" FontSize="14"/>
+        <Label Content="Use mask" HorizontalAlignment="Left" Margin="21,128,0,0" VerticalAlignment="Top" Width="92" FontFamily="Times New Roman" FontSize="14"/>
+        <Label Content="Mask is:" HorizontalAlignment="Left" Margin="21,159,0,0" VerticalAlignment="Top" Width="92" FontFamily="Times New Roman" FontSize="14"/>
+        <Button HorizontalAlignment="Left" Margin="243,66,0,0" VerticalAlignment="Top" Width="80" Height="26" Content="BROWSE" Click="Browse_Click" FontFamily="Times New Roman"/>
+        <TextBox x:Name="tb_file_name" HorizontalAlignment="Left" Height="26" Margin="118,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16" FontFamily="Times New Roman"/>
+        <TextBox x:Name="tb_mask_1" HorizontalAlignment="Left" Height="26" Margin="118,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="37" FontSize="16" FontFamily="Times New Roman" MaxLength="3" MaxLines="1"/>
+        <Button Content="BEGIN" HorizontalAlignment="Left" Margin="21,199,0,0" VerticalAlignment="Top" Width="302" Height="46" Click="Btn_Begin_Click" FontFamily="Times New Roman" FontSize="16"/>
+        <CheckBox x:Name="cb_mask" HorizontalAlignment="Left" Margin="118,133,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.45,0.067" Click="Mask_Checked"/>
+        <DataGrid x:Name="dg_table" HorizontalAlignment="Left" Height="617" Margin="378,57,0,0" VerticalAlignment="Top" Width="457" AutoGenerateColumns="False" SelectionChanged="dg_table_SelectionChanged" FontFamily="Times New Roman" FontSize="14">
             <DataGrid.Columns>
                 <DataGridTextColumn Width="65" Header="Status" Binding="{Binding Path=Status}"></DataGridTextColumn>
                 <DataGridTextColumn Width="140" Header="Ip" Binding="{Binding Path=Ip}"></DataGridTextColumn>
@@ -31,5 +25,32 @@
                 <DataGridTextColumn Width="175" Header="Error" Binding="{Binding Path=Error}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
+        <Label x:Name="lb_ip" Content="IP: " HorizontalAlignment="Left" Margin="870,57,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="24" Width="284"/>
+        <DataGrid x:Name="dg_dater" HorizontalAlignment="Left" Height="574" Margin="870,100,0,0" VerticalAlignment="Top" Width="284" FontFamily="Times New Roman" FontSize="14">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="75" Header="Time" Binding="{Binding Path=Time}"></DataGridTextColumn>
+                <DataGridTextColumn Width="100" Header="Date" Binding="{Binding Path=Date}"></DataGridTextColumn>
+                <DataGridTextColumn Width="106" Header="Error" Binding="{Binding Path=Error}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Border:" HorizontalAlignment="Left" Margin="21,97,0,0" VerticalAlignment="Top" Width="92" FontFamily="Times New Roman" FontSize="14"/>
+        <TextBox Text="1" x:Name="tb_border" HorizontalAlignment="Left" Height="26" Margin="118,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="tb_border_TextChanged" BorderThickness="1" FontSize="16" FontFamily="Times New Roman"/>
+        <Button Content="ADD" HorizontalAlignment="Left" Margin="212,273,0,0" VerticalAlignment="Top" Width="124" Height="32" FontFamily="Times New Roman" Click="AddBan_Click"/>
+        <Button Content="ADD" HorizontalAlignment="Left" Margin="212,310,0,0" VerticalAlignment="Top" Width="124" Height="32" FontFamily="Times New Roman" Click="AddGood_Click"/>
+        <Button Content="RECORD" HorizontalAlignment="Left" Margin="212,347,0,0" VerticalAlignment="Top" Width="124" Height="32" FontFamily="Times New Roman" Click="Record_Click"/>
+        <Label Content="Add selected IP to ban-list" HorizontalAlignment="Left" Margin="10,276,0,0" VerticalAlignment="Top" Width="197" FontFamily="Times New Roman" FontSize="14"/>
+        <Label Content="Add selected IP to good-list" HorizontalAlignment="Left" Margin="10,313,0,0" VerticalAlignment="Top" Width="197" FontFamily="Times New Roman" FontSize="14"/>
+        <Label Content="Record this table to file" HorizontalAlignment="Left" Margin="10,350,0,0" VerticalAlignment="Top" Width="197" FontFamily="Times New Roman" FontSize="14"/>
+        <Label Content="." HorizontalAlignment="Left" Margin="155,167,0,0" VerticalAlignment="Top" Width="19" FontFamily="Times New Roman" FontSize="14" FontWeight="Bold"/>
+        <TextBox x:Name="tb_mask_2" HorizontalAlignment="Left" Height="26" Margin="170,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="37" FontSize="16" FontFamily="Times New Roman" MaxLength="3" MaxLines="1"/>
+        <Label Content="." HorizontalAlignment="Left" Margin="207,167,0,0" VerticalAlignment="Top" Width="19" FontFamily="Times New Roman" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.105,0.385"/>
+        <TextBox x:Name="tb_mask_3" HorizontalAlignment="Left" Height="26" Margin="222,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="37" FontSize="16" FontFamily="Times New Roman" MaxLength="3" MaxLines="1"/>
+        <Label Content="." HorizontalAlignment="Left" Margin="259,167,0,0" VerticalAlignment="Top" Width="19" FontFamily="Times New Roman" FontSize="14" FontWeight="Bold"/>
+        <TextBox x:Name="tb_mask_4" HorizontalAlignment="Left" Height="26" Margin="275,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="37" FontSize="16" FontFamily="Times New Roman" MaxLength="3" MaxLines="1"/>
+        <Button Content="ADD" HorizontalAlignment="Left" Margin="212,442,0,0" VerticalAlignment="Top" Width="124" Height="31" FontFamily="Times New Roman" Click="AddCidr_Click"/>
+        <Label Content="Add CIDR to ban-list:" HorizontalAlignment="Left" Margin="10,416,0,0" VerticalAlignment="Top" Width="197" FontFamily="Times New Roman" FontSize="14"/>
+        <TextBox x:Name="tb_cidr" HorizontalAlignment="Left" Height="31" Margin="10,442,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="197" FontSize="16" FontFamily="Times New Roman"/>
+        <TextBox x:Name="tb_ip" HorizontalAlignment="Left" Height="30" Margin="10,557,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="197" FontSize="16" FontFamily="Times New Roman"/>
+        <Label Content=": IP" HorizontalAlignment="Left" Margin="212,557,0,0" VerticalAlignment="Top" Width="124" FontFamily="Times New Roman" FontSize="14"/>
     </Grid>
 </Window>

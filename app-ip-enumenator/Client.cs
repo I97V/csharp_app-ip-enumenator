@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Windows;
 
 namespace app_ip_enumenator
 {
@@ -9,12 +8,12 @@ namespace app_ip_enumenator
         public string Ip { get; set; }
         public int Occurrence { get; set; }
         public string Error { get; set; }
-        public List<int> Errors { get; set; }
+        public List<string> Errors { get; set; }
         public List<Occurrence> Occurrences { get; set; }
 
-        public Client(string _status, string _ip, int _occurrence, int _error, Occurrence _oc)
+        public Client(string _status, string _ip, int _occurrence, string _error, Occurrence _oc)
         {
-            Errors = new List<int>();
+            Errors = new List<string>();
             Occurrences = new List<Occurrence>();
             Status = _status;
             Ip = _ip;
@@ -24,21 +23,27 @@ namespace app_ip_enumenator
             Occurrences.Add(_oc);
         }
 
-        public void AddError(int _error)
+        public void AddError(string _error)
         {
             for (int i = 0; i < Errors.Count; i++)
             {
-                if (Errors[i] == _error)
-                {
-                    continue;
-                }
-                else
+                if (!WasError(_error))
                 {
                     Errors.Add(_error);
-                    Error = Error + " " + _error;
-                    continue;
+                    return;
                 }
             }
+        }
+
+        private bool WasError(string _error)
+        {
+            foreach (string e in Errors)
+            {
+                if (e == _error)
+                    return false;
+            }
+
+            return true;
         }
     }
 }
