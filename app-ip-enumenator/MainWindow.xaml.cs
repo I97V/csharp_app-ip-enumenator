@@ -318,7 +318,7 @@ namespace app_ip_enumenator
         {
             using (StreamWriter sr = new StreamWriter(_path, true))
             {
-                sr.WriteLine(_text);
+				sr.WriteLine(_text);
             }
         }
 
@@ -369,5 +369,35 @@ namespace app_ip_enumenator
 
             MessageBox.Show("Well!", "Record to file");
         }
-    }
+
+		private void UnloadSingle_Click(object sender, RoutedEventArgs e)
+		{
+			using (StreamWriter sr = new StreamWriter(@"outputs/single/" + tb_ip.Text + ".log"))
+			{
+				sr.WriteLine("|__________________" + tb_ip.Text + "__________________|");
+				sr.WriteLine();
+				int c = 1;
+				foreach (Occurrence o in dg_dater.Items)
+				{
+					sr.WriteLine(c + "\t---\t" + o.Time + "\t" + o.Error + "\t" + o.Date);
+					c++;
+				}
+			}
+		}
+
+		private void UnloadAll_Click(object sender, RoutedEventArgs e)
+		{
+			using (StreamWriter sr = new StreamWriter(@"outputs/all/" + tb_file_name.Text + ".log"))
+			{
+				sr.WriteLine("|__________________" + tb_file_name.Text + "__________________|");
+				sr.WriteLine();
+				int c = 1;
+				foreach (Client cl in dg_table.Items)
+				{
+					sr.WriteLine(c + "\t---\t" + cl.Ip + "\t" + cl.Occurrence + "\t" + cl.Status);
+					c++;
+				}
+			}
+		}
+	}
 }

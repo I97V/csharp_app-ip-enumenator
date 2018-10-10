@@ -52,5 +52,7 @@
         <TextBox x:Name="tb_cidr" HorizontalAlignment="Left" Height="31" Margin="10,442,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="197" FontSize="16" FontFamily="Times New Roman"/>
         <TextBox x:Name="tb_ip" HorizontalAlignment="Left" Height="30" Margin="10,557,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="197" FontSize="16" FontFamily="Times New Roman"/>
         <Label Content=": IP" HorizontalAlignment="Left" Margin="212,557,0,0" VerticalAlignment="Top" Width="124" FontFamily="Times New Roman" FontSize="14"/>
+        <Button Content="Unload SINGLE" HorizontalAlignment="Left" Margin="10,607,0,0" VerticalAlignment="Top" Width="124" Height="31" FontFamily="Times New Roman" Click="UnloadSingle_Click"/>
+        <Button Content="Unload ALL" HorizontalAlignment="Left" Margin="10,643,0,0" VerticalAlignment="Top" Width="124" Height="31" FontFamily="Times New Roman" Click="UnloadAll_Click"/>
     </Grid>
 </Window>
